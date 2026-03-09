@@ -65,7 +65,7 @@ le = LabelEncoder()
 df_clean["location_encoded"] = le.fit_transform(df_clean["location"])
 
 # Load model
-model = pickle.load(open("models/price_model.pkl","rb"))
+model = pickle.load("price_model.pkl","rb")
 
 # ---------------- SIDEBAR ----------------
 
@@ -196,3 +196,4 @@ elif page == "Dataset":
     st.dataframe(df_clean)
 
     st.write("Dataset Shape:", df_clean.shape)
+
