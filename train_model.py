@@ -65,6 +65,7 @@ print("Model Accuracy:", score)
 
 # ---------------- SAVE MODEL ----------------
 
-pickle.dump(model, open("models/price_model.pkl", "wb"))
+pickle.dump(model, open("price_model.pkl", "wb"))
+
 
 print("Model Saved Successfully")
