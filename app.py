@@ -4,6 +4,14 @@ import pickle
 import pandas as pd
 import plotly.express as px
 from sklearn.preprocessing import LabelEncoder
+import os
+import joblib
+
+
+if not os.path.exists("price_model.pkl"):
+    import train_model 
+
+model=joblib.load("price_model.pkl")
 
 # ---------------- PAGE CONFIG ----------------
 
@@ -146,7 +154,7 @@ elif page == "Budget Recommendation":
 
         st.write("No locations found within this budget.")
 
-# ---------------- MARKET ANALYSIS ----------------
+#  MARKET ANALYSIS 
 
 elif page == "Market Analysis":
 
@@ -179,7 +187,7 @@ elif page == "Market Analysis":
 
     st.plotly_chart(fig3, use_container_width=True)
 
-# ---------------- DATASET ----------------
+# DATASET
 
 elif page == "Dataset":
 
